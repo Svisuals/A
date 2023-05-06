@@ -1,50 +1,65 @@
 body {
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 h1 {
-    text-align: center;
-    margin-top: 50px;
+	text-align: center;
+	padding: 50px 0;
 }
 
-.container {
-    margin: 50px auto;
-    width: 90%;
-    height: 70vh;
-    position: relative;
-    overflow: hidden;
+#sitios {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 50px;
 }
 
-.container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
-    transition: opacity 0.5s ease;
+.sitio {
+	background-color: white;
+	border: 1px solid black;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	margin: 10px;
 }
 
-.container iframe:not(.active) {
-    opacity: 0;
-    pointer-events: none;
+.sitio h2 {
+	text-align: center;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.sitio a {
+	display: block;
+	text-align: center;
+	margin-top: 20px;
 }
 
-button {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: none;
-    background-color: #ddd;
-    margin: 0 10px;
-    cursor: pointer;
+#botones {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
-button.active {
-    background-color: #555;
+.boton {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: #ddd;
+	border: none;
+	color: black;
+	margin: 10px;
+	font-size: 16px;
+}
+
+.boton:hover {
+	cursor: pointer;
+	background-color: #bbb;
+}
+
+.boton.activo {
+	background-color: #4CAF50;
+	color: white;
 }
