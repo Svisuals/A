@@ -1,21 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SVisuals Tour Virtual 360°</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Tour Virtual 360°</h1>
-    <div class="container">
-        <iframe src="https://svisuals.github.io/Prueba3/" class="active" id="site1"></iframe>
-        <iframe src="https://svisuals.github.io/ApartamentoExemplo/" id="site2"></iframe>
-    </div>
-    <div class="buttons">
-        <button class="active" onclick="showSite(1)"></button>
-        <button onclick="showSite(2)"></button>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Nombre del sitio web</title>
+    <link rel="shortcut icon" type="image/png" href="LOGO-SVISUALS-SV.png"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body>
+    <header>
+      <h1>Nombre del sitio web</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Acerca de</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="slider">
+        <div class="slide active" style="background-image: url('https://svisuals.github.io/Prueba3/IMG_0018.jpg')">
+          <div class="overlay"></div>
+          <div class="text">
+            <h3>Prueba3</h3>
+            <p>Descripción del sitio web</p>
+            <a href="https://svisuals.github.io/Prueba3/">Ir al sitio</a>
+          </div>
+        </div>
+
+        <div class="slide" style="background-image: url('https://svisuals.github.io/ApartamentoExemplo/IMG_1592.jpg')">
+          <div class="overlay"></div>
+          <div class="text">
+            <h3>ApartamentoExemplo</h3>
+            <p>Descripción del sitio web</p>
+            <a href="https://svisuals.github.io/ApartamentoExemplo/">Ir al sitio</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="circle" onclick="currentSlide(1)"></div>
+        <div class="circle" onclick="currentSlide(2)"></div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
