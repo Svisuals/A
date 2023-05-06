@@ -1,26 +1,30 @@
-// Get all iframe containers and set the initial index to 0
-const iframeContainers = document.querySelectorAll('.iframe-container');
-let currentIndex = 0;
+let slideIndex = 1;
+showSlides(slideIndex);
 
-// Show the current iframe and hide the rest
-const showIframe = () => {
-  iframeContainers.forEach((container, index) => {
-    if (index === currentIndex) {
-      container.classList.add('active');
-    } else {
-      container.classList.remove('active');
-    }
-  });
-};
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-// Add event listener to the buttons to change the index and show the iframe
-const buttons = document.querySelectorAll('.button');
-buttons.forEach((button, index) => {
-  button.addEventListener('click', () => {
-    currentIndex = index;
-    showIframe();
-  });
-});
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-// Show the initial iframe
-showIframe();
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
