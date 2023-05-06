@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Switch Sites</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Portafolio</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Switch Sites</h1>
-    <div class="container">
-        <iframe src="https://svisuals.github.io/Prueba3/" class="active" id="site1"></iframe>
-        <iframe src="https://svisuals.github.io/ApartamentoExemplo/" id="site2"></iframe>
-    </div>
-    <div class="buttons">
-        <button class="active" onclick="showSite(1)"></button>
-        <button onclick="showSite(2)"></button>
-    </div>
-    <script src="script.js"></script>
+
+	<h1>Portafolio</h1>
+
+	<div id="sitios">
+		<div class="sitio sitio1">
+			<h2>Sitio 1</h2>
+			<a href="https://svisuals.github.io/Prueba3/">Ver sitio</a>
+		</div>
+		<div class="sitio sitio2">
+			<h2>Sitio 2</h2>
+			<a href="https://svisuals.github.io/ApartamentoExemplo/">Ver sitio</a>
+		</div>
+	</div>
+
+	<div id="botones">
+		<button class="boton boton1">1</button>
+		<button class="boton boton2">2</button>
+	</div>
+
+	<script src="script.js"></script>
+
 </body>
 </html>
