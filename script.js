@@ -1,26 +1,35 @@
-let site1 = document.getElementById("site1");
-let site2 = document.getElementById("site2");
+const slides = document.querySelectorAll('.carousel-slide');
+const buttons = document.querySelectorAll('.carousel-nav-btn');
 
-function showSite(siteNum) {
-    if (siteNum == 1) {
-        site1.classList.add("active");
-        site2.classList.remove("active");
-        document.querySelector(".buttons button:nth-child(1)").classList.add("active");
-        document.querySelector(".buttons button:nth-child(2)").classList.remove("active");
-    } else {
-        site2.classList.add("active");
-        site1.classList.remove("active");
-        document.querySelector(".buttons button:nth-child(2)").classList.add("active");
-        document.querySelector(".buttons button:nth-child(1)").classList.remove("active");
-    }
+let currentSlide = 1;
+
+// Add event listeners to buttons
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Get slide number from button data-slide attribute
+    const slideNumber = Number(button.getAttribute('data-slide'));
+    currentSlide = slideNumber;
+    setActiveButton();
+    setSlidePosition();
+  });
+});
+
+// Set the position of the slides based on the current slide
+function setSlidePosition() {
+  slides.forEach((slide, index) => {
+    slide.style.transform = `translateX(${(index - currentSlide + 1) * 100}%)`;
+  });
 }
 
-document.querySelector(".buttons button:nth-child(1)").addEventListener("click", function() {
-    showSite(1);
-});
+// Set active class to active button
+function setActiveButton() {
+  buttons.forEach(button => {
+    button.classList.remove('active');
+    if (Number(button.getAttribute('data-slide')) === currentSlide) {
+      button.classList.add('active');
+    }
+  });
+}
 
-document.querySelector(".buttons button:nth-child(2)").addEventListener("click", function() {
-    showSite(2);
-});
-
+setSlidePosition();
 
