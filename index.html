@@ -1,116 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>My Website</title>
-	<style>
-		body {
-			background-color: #f7f7f7;
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			min-height: 100vh;
-		}
-
-		h1 {
-			margin-top: 30px;
-			text-align: center;
-			font-size: 36px;
-			color: #333333;
-			text-shadow: 1px 1px 1px #cccccc;
-		}
-
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 70vh;
-			width: 90vw;
-			background-color: #ffffff;
-			box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.1);
-			padding: 20px;
-			margin-top: 30px;
-			overflow: hidden;
-			border-radius: 5px;
-			position: relative;
-		}
-
-		.iframe-container {
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			transition: transform 0.2s ease-out;
-			transform: scale(1);
-		}
-
-		.iframe-container:hover {
-			transform: scale(1.05);
-		}
-
-		.iframe-container iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border: none;
-		}
-
-		h2 {
-			margin-top: 0;
-			margin-bottom: 10px;
-			text-align: center;
-			font-size: 24px;
-			color: #333333;
-			text-shadow: 1px 1px 1px #cccccc;
-		}
-
-		.arrow {
-			position: absolute;
-			top: calc(50% - 20px);
-			font-size: 36px;
-			color: #333333;
-			cursor: pointer;
-			opacity: 0.5;
-			transition: opacity 0.2s ease-out;
-		}
-
-		.arrow:hover {
-			opacity: 1;
-		}
-
-		.arrow-left {
-			left: 20px;
-		}
-
-		.arrow-right {
-			right: 20px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <title>Switch Sites</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>My Website</h1>
-
-	<div class="container">
-		<div class="iframe-container">
-			<h2>Svisuals360</h2>
-			<iframe id="site1" src="https://svisuals.github.io/Prueba3/" frameborder="0" allowfullscreen></iframe>
-		</div>
-		<div class="iframe-container">
-			<h2>ApartamentoExemplo</h2>
-			<iframe id="site2" src="https://svisuals.github.io/ApartamentoExemplo/" frameborder="0"></iframe>
-		</div>
-
-		<div class="arrow arrow-left">&#8249;</div>
-		<div class="arrow arrow-right">&#8250;</div>
-	</div>
-
-	<script src="script.js"></script>
+    <h1>Switch Sites</h1>
+    <div class="container">
+        <iframe src="https://svisuals.github.io/Prueba3/" class="active" id="site1"></iframe>
+        <iframe src="https://svisuals.github.io/ApartamentoExemplo/" id="site2"></iframe>
+    </div>
+    <div class="buttons">
+        <button class="active" onclick="showSite(1)"></button>
+        <button onclick="showSite(2)"></button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
